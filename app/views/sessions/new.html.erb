@@ -1,0 +1,16 @@
+	
+	<div id='loginDiv'>
+		<%= simple_form_for(:session, :url => sessions_path) do |f| %>
+			<table>
+				<tr><%= f.input :email %></tr>
+				<tr><%= f.input :password %></tr>
+				<tr><%= f.button :submit, "Login", class: 'loginButton' %></tr>
+			</table>
+		<% end %>
+		<% if flash[:error] %>
+			<p id="errors"><%= flash[:error] %></p>
+		<% end %>
+	</div>
+	<div id="regDiv">
+		<h1>Don't have an account? <a href="/users/new">Register</a></h1>
+	<div>

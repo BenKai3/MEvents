@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @event.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @event.state %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= "#{@event.user.first_name} #{@event.user.last_name}" %>
+</p>
+<% if session[:user_id] == @event.user.id %>
+  <%= link_to 'Edit', edit_event_path(@event) %>
+<% end %>
+<%= link_to 'Back', events_path %>
+<h3>People attending this event: <%= @attending.length %></h3>
+<% if @user_attending.blank? %>
+  <form action="/join_event/<%= @event.id %>" method="post">
+    <input type="hidden" name="join" value="join">
+    <input type="hidden" name="event" value="<%= @event.id %>">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type="submit" value="Join Event">
+  </form>
+<% else %>
+  <form action="/cancel_RSVP/<%= @event.id %>" method="post">
+    <input type="hidden" name="cancel" value="cancel">
+    <input type="hidden" name="event" value="<%= @event.id %>">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type="submit" value="Cancel RSVP">
+  </form>
+<% end %>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+  </thead>
+  <tbody>
+    <% @attending.each do |a| %>
+      <tr>
+        <td><%= a.user.first_name+" "+a.user.last_name %></td>
+        <td><%= a.user.city %></td>
+        <td><%= a.user.state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

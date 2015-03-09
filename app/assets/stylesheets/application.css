@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{
+ 	padding: 0px;
+ 	margin: 0px;
+ 	/*background-color: gray;*/
+ }
+ table,thead,th,td{
+	padding: 10px;
+	/*border: 1px solid black;*/
+	background-color: #DADADA;
+	border-collapse: collapse;
+}
+form{
+	margin: 0px;
+	background-color: #DADADA;
+	text-align: center;
+}
+input{
+	border: 1px solid #6A1B9A;
+	background: white;
+	color: #6A1B9A;
+	margin: 10px;
+}
+table{
+	width: 80%;
+	margin: 0px auto;
+}
+td > a{
+ 	color: black; 
+ 	background-color: white;
+ 	opacity: 0.5;
+ 	padding: 5px;
+ 	width: 100%;
+}
+th{
+	background-color: #727272;
+}
+td{
+	color: #727272;
+	text-align: center;
+	border-top: 1px solid gray;
+	max-height: 200px;
+	overflow: scroll;
+}
+a{
+	color: #FF6E40;
+	text-decoration: none;
+}
+a:hover{
+	color: #FF3D00;
+	background-color: 
+}
+#nav_bar{
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	background-color: #6A1B9A;
+	display: inline-block;
+	width: 100%;
+ }
+ #nav_bar h3{
+ 	float: right;
+ 	padding-right: 80px;
+ 	/*vertical-align: top;*/
+	/*display: inline-block;*/
+ }
+ h3 a{
+ 	/*vertical-align: bottom;*/
+	/*display: inline;*/
+	padding-right: 100px;
+ }
+ #header{
+ 	margin: 0px;
+	padding: 5px;
+	color: white;
+	background-color: #AB47BC;	
+ }
+ #errors{
+ 	margin: 0px;
+ 	padding: 10px;
+ 	text-align: center;
+ 	color: #FF3D00;
+ 	background-color: #DADADA;
+ }
+#regDiv{
+	background-color: #FF9E80;
+}
+#regDiv h1{
+	margin: 0;
+	padding-top: 20px;
+	vertical-align: middle;
+}

@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events in your state:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Host</th>
+      <th>Attending?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events_state.each do |event| %>
+      <tr>
+        <td><a href="events/<%= event.id %>"><%= event.name %></a></td>
+        <td><%= event.date %></td>
+        <td><%= event.city %></td>
+        <td><%= event.state %></td>
+        <td><%= event.user.first_name+" "+event.user.last_name %></td>
+        <td>
+          <%  @attending_events.each do |attending| %>
+            <% if attending.user_id == session[:user_id] && attending.event_id == event.id %>
+              Attending
+            <% end %>
+          <% end %>
+        </td>
+        <% if session[:user_id] == event.user.id %>
+          <td><%= link_to 'Cancel', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Events not in your state:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Host</th>
+      <th>Attending?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events_other.each do |event| %>
+      <tr>
+        <td><a href="events/<%= event.id %>"><%= event.name %></a></td>
+        <td><%= event.date %></td>
+        <td><%= event.city %></td>
+        <td><%= event.state %></td>
+        <td><%= event.user.first_name+" "+event.user.last_name %></td>
+        <% if session[:user_id] == event.user.id %>
+          <td><%= link_to 'Cancel', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
