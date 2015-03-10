@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<h1 class="h1_headings">Event Info:</h1>
+<form>
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -30,10 +31,9 @@
   <%= "#{@event.user.first_name} #{@event.user.last_name}" %>
 </p>
 <% if session[:user_id] == @event.user.id %>
-  <%= link_to 'Edit', edit_event_path(@event) %>
+    <a href="/events/<%= @event.id %>/edit" class="button">Edit Event</a>
 <% end %>
-<%= link_to 'Back', events_path %>
-<h3>People attending this event: <%= @attending.length %></h3>
+</form>
 <% if @user_attending.blank? %>
   <form action="/join_event/<%= @event.id %>" method="post">
     <input type="hidden" name="join" value="join">
@@ -49,6 +49,7 @@
     <input type="submit" value="Cancel RSVP">
   </form>
 <% end %>
+<h3 class="h1_headings">People attending this event: <%= @attending.length %></h3>
 <table>
   <thead>
     <th>Name</th>
@@ -58,7 +59,7 @@
   <tbody>
     <% @attending.each do |a| %>
       <tr>
-        <td><%= a.user.first_name+" "+a.user.last_name %></td>
+        <td><a href="/users/<%= a.user.id %>"><%= a.user.first_name+" "+a.user.last_name %></a></td>
         <td><%= a.user.city %></td>
         <td><%= a.user.state %></td>
       </tr>

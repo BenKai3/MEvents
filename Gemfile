@@ -27,7 +27,7 @@ gem 'hirb'
 
 gem 'geoip'
 
-gem 'rails-footnotes', '>= 4.0.0', '<5'
+# gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 gem 'simple_form'
 
@@ -45,20 +45,20 @@ gem "paperclip", "~> 4.2"
 # find geolocation by ip address etc
 # gem 'geocoder'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+# group :development, :test do
+#   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+#   gem 'byebug'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+#   # Access an IRB console on exception pages or by using <%= console %> in views
+#   gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 1.3.3'
+#   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+#   gem 'spring', '~> 1.3.3'
 
-  # more descriptive error displays, precise pinpointing
-  gem "better_errors"
+#   # more descriptive error displays, precise pinpointing
+#   gem "better_errors"
 
-  # for use of advanced 'better errors' options
-  gem "binding_of_caller"
-end
+#   # for use of advanced 'better errors' options
+#   gem "binding_of_caller"
+# end
 

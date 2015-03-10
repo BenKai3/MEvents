@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h1 class="h1_headings">Your Profile:</h1>
+<form>
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @user.city %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <p>
+    <strong>State:</strong>
+    <%= @user.state %>
+  </p>
+</form>
+<div class="gray_background">
+  <% if @user.id == session[:user_id] %>
+    <a href="/users/<%= @user.id %>/edit" class="button">Edit Profile</a>
+  <% end %>
+</div>

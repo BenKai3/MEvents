@@ -15,26 +15,28 @@
  */
 
  body{
- 	padding: 0px;
+ 	background-image: url("http://amirstudios.com/wp-content/uploads/2014/07/5.Special-events.jpg");
+ 	background-size: 100% 100%;
+ 	background-repeat: no-repeat;
+ 	/*padding-top: 300px;*/
  	margin: 0px;
- 	/*background-color: gray;*/
+ 	min-height: 700px;
  }
  table,thead,th,td{
 	padding: 10px;
-	/*border: 1px solid black;*/
 	background-color: #DADADA;
 	border-collapse: collapse;
 }
 form{
-	margin: 0px;
+	margin: 0px auto;
 	background-color: #DADADA;
 	text-align: center;
+	width: 80%;
+	text-align: center;
 }
-input{
-	border: 1px solid #6A1B9A;
-	background: white;
-	color: #6A1B9A;
-	margin: 10px;
+form p{
+	padding: 10px;
+
 }
 table{
 	width: 80%;
@@ -60,10 +62,42 @@ td{
 a{
 	color: #FF6E40;
 	text-decoration: none;
+	width: 80%;
+	text-align: center;
 }
 a:hover{
 	color: #FF3D00;
 	background-color: 
+}
+input, .button{
+	border: 1px solid #6A1B9A;
+	background: white;
+	color: #6A1B9A;
+	margin: 10px;
+	padding: 5px;
+	width: 50%;
+	text-align: center;
+}
+.button:hover{
+	background: white;
+	color: #6A1B9A;
+}
+.h1_headings{
+	color: white;
+	background-color: gray;
+	opacity: 0.9;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
+	margin: 0px auto;
+	width: 80%;
+
+}
+h3 a{
+	padding-right: 100px;
+}
+p{
+	margin: 0px;
+	padding: 0px;
 }
 #nav_bar{
 	margin: 0px;
@@ -76,13 +110,6 @@ a:hover{
  #nav_bar h3{
  	float: right;
  	padding-right: 80px;
- 	/*vertical-align: top;*/
-	/*display: inline-block;*/
- }
- h3 a{
- 	/*vertical-align: bottom;*/
-	/*display: inline;*/
-	padding-right: 100px;
  }
  #header{
  	margin: 0px;
@@ -97,6 +124,10 @@ a:hover{
  	color: #FF3D00;
  	background-color: #DADADA;
  }
+#loginDiv{
+	padding: 20px;
+	background-color: #DADADA;
+}
 #regDiv{
 	background-color: #FF9E80;
 }
@@ -104,4 +135,12 @@ a:hover{
 	margin: 0;
 	padding-top: 20px;
 	vertical-align: middle;
+}
+.gray_background{
+	background-color: #DADADA;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
+	width: 80%;
+	text-align: center;
+	margin: 0px auto;
 }

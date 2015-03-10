@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    puts "user: "+@user.id.to_s
+    puts "session[:user_id]: "+session[:user_id].to_s
   end
 
   # GET /users/new
@@ -27,12 +29,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     puts ''
-    puts '@user: '+@user
+    puts 'user: '+@user.to_s
     puts ''
     
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'You are registered! Log in and start having fun. :)' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
